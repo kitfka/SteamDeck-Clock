@@ -8,6 +8,8 @@
 
 config_version=5
 
+version="0.1.0"
+
 [application]
 
 config/name="Steam Deck Clock"

@@ -1,7 +1,10 @@
-<Project Sdk="Godot.NET.Sdk/4.0.1">
+<Project Sdk="Godot.NET.Sdk/4.0.2">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>SteamDeckClock</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="GodotCSToolbox" Version="2.0.0-beta17" />
+  </ItemGroup>
 </Project>

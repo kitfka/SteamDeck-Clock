@@ -9,13 +9,11 @@ public partial class Start : Control
 	public override void _Ready()
 	{
 		this.SetupNodeTools();
-
-		TimeLabel.Text = "Hello World!";
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		
+		TimeLabel.Text = DateTime.Now.ToString("h:mm:ss tt"); // this is wierd?
 	}
 }

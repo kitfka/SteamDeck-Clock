@@ -13,6 +13,7 @@ version="0.1.0"
 [application]
 
 config/name="Steam Deck Clock"
+run/main_scene="res://Start.tscn"
 config/features=PackedStringArray("4.0", "C#", "Mobile")
 config/icon="res://icon.svg"
 
@@ -24,10 +25,6 @@ window/size/viewport_height=800
 [dotnet]
 
 project/assembly_name="Steam Deck Clock"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/GodotVersion/plugin.cfg")
 
 [rendering]
 

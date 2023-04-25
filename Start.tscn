@@ -30,10 +30,18 @@ offset_right = 134.0
 offset_bottom = 256.0
 
 [node name="HourSlot" parent="HBoxContainer" instance=ExtResource("2_2yb5h")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="MinuteSlot" parent="HBoxContainer" instance=ExtResource("2_2yb5h")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="SecondSlot" parent="HBoxContainer" instance=ExtResource("2_2yb5h")]
+unique_name_in_owner = true
 layout_mode = 2
+
+[connection signal="IntOverflow" from="HBoxContainer/MinuteSlot" to="HBoxContainer/HourSlot" method="ChangeTheValue" binds= [1]]
+[connection signal="IntUnderflow" from="HBoxContainer/MinuteSlot" to="HBoxContainer/HourSlot" method="ChangeTheValue" binds= [-1]]
+[connection signal="IntOverflow" from="HBoxContainer/SecondSlot" to="HBoxContainer/MinuteSlot" method="ChangeTheValue" binds= [1]]
+[connection signal="IntUnderflow" from="HBoxContainer/SecondSlot" to="HBoxContainer/MinuteSlot" method="ChangeTheValue" binds= [-1]]

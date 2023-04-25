@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtmymydtx5vs4"]
+[gd_scene load_steps=5 format=3 uid="uid://dtmymydtx5vs4"]
 
 [ext_resource type="Script" path="res://Start.cs" id="1_i8sj7"]
 [ext_resource type="PackedScene" uid="uid://byjia67fqqcan" path="res://time_slot.tscn" id="2_2yb5h"]
+[ext_resource type="AudioStream" uid="uid://dsefn3i04a1ch" path="res://jingles_HIT15.ogg" id="3_nkqi5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ijr3p"]
 font_size = 64
@@ -41,7 +42,20 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 216.0
+offset_right = 298.0
+offset_bottom = 322.0
+text = "PLAY"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_nkqi5")
+
 [connection signal="IntOverflow" from="HBoxContainer/MinuteSlot" to="HBoxContainer/HourSlot" method="ChangeTheValue" binds= [1]]
 [connection signal="IntUnderflow" from="HBoxContainer/MinuteSlot" to="HBoxContainer/HourSlot" method="ChangeTheValue" binds= [-1]]
 [connection signal="IntOverflow" from="HBoxContainer/SecondSlot" to="HBoxContainer/MinuteSlot" method="ChangeTheValue" binds= [1]]
 [connection signal="IntUnderflow" from="HBoxContainer/SecondSlot" to="HBoxContainer/MinuteSlot" method="ChangeTheValue" binds= [-1]]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

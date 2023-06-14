@@ -42,7 +42,8 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Button" type="Button" parent="."]
+[node name="PlayPauseButton" type="Button" parent="."]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 288.0
 offset_top = 216.0
@@ -66,5 +67,5 @@ text = "WORK! loop play"
 [connection signal="IntUnderflow" from="HBoxContainer/MinuteSlot" to="HBoxContainer/HourSlot" method="ChangeTheValue" binds= [-1]]
 [connection signal="IntOverflow" from="HBoxContainer/SecondSlot" to="HBoxContainer/MinuteSlot" method="ChangeTheValue" binds= [1]]
 [connection signal="IntUnderflow" from="HBoxContainer/SecondSlot" to="HBoxContainer/MinuteSlot" method="ChangeTheValue" binds= [-1]]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PlayPauseButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

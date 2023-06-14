@@ -10,9 +10,21 @@ public partial class Start : Control
 	[UniqueNode] private time_slot MinuteSlot;
 	[UniqueNode] private time_slot SecondSlot;
 	[UniqueNode] private AudioStreamPlayer AudioStreamPlayer;
+	[UniqueNode] private Button PlayPauseButton;
 
 	private bool WorkLoop = false;
 	private bool running = false;
+
+	public bool Running
+	{
+		get { return running; }
+		set 
+		{ 
+			running = value;
+			PlayPauseButton.Text = value ? "Playing" : "Paused";
+		}
+	}
+	
 
 	public override void _Ready()
 	{
@@ -42,7 +54,7 @@ public partial class Start : Control
 					{
 						WorkLoop = false;
 						MinuteSlot.Value = 5;
-						running = true;
+						Running = true;
 					}
 				}
 			}
@@ -50,13 +62,16 @@ public partial class Start : Control
 	}
 
 	public void _on_button_pressed()
-	{
-		if (SecondSlot.Value != 0 || MinuteSlot.Value != 0 || HourSlot.Value != 0)
-		{
-			running = true;
-		}
-	}
-	private void _on_button_2_pressed()
+    {
+        if (SecondSlot.Value == 0 && MinuteSlot.Value == 0 && HourSlot.Value == 0)
+        {
+            return;
+        }
+
+		Running = !Running;
+		GD.Print(running);
+    }
+    private void _on_button_2_pressed()
 	{
 		// Replace with function body.
 		

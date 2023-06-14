@@ -54,8 +54,17 @@ text = "PLAY"
 unique_name_in_owner = true
 stream = ExtResource("3_nkqi5")
 
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 216.0
+offset_right = 840.0
+offset_bottom = 322.0
+text = "WORK! loop play"
+
 [connection signal="IntOverflow" from="HBoxContainer/MinuteSlot" to="HBoxContainer/HourSlot" method="ChangeTheValue" binds= [1]]
 [connection signal="IntUnderflow" from="HBoxContainer/MinuteSlot" to="HBoxContainer/HourSlot" method="ChangeTheValue" binds= [-1]]
 [connection signal="IntOverflow" from="HBoxContainer/SecondSlot" to="HBoxContainer/MinuteSlot" method="ChangeTheValue" binds= [1]]
 [connection signal="IntUnderflow" from="HBoxContainer/SecondSlot" to="HBoxContainer/MinuteSlot" method="ChangeTheValue" binds= [-1]]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

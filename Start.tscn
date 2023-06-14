@@ -49,7 +49,7 @@ offset_left = 288.0
 offset_top = 216.0
 offset_right = 420.0
 offset_bottom = 322.0
-text = "PLAY"
+text = "Play"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
